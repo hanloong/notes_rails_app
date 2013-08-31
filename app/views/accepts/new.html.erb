@@ -2,7 +2,7 @@
 
 <div class="content">
   <h2><%= @accept.terms_and_condition.title %></h2>
-  <%= @accept.terms_and_condition.body %>
+  <%= @accept.terms_and_condition.body.gsub("\n", "<br/>").html_safe %>
 <div>
 
 <%= render 'form' %>

@@ -7,7 +7,7 @@
 
 <p>
   <strong>Body:</strong>
-  <%= @terms_and_condition.body %>
+  <%= @terms_and_condition.body.gsub("\n", "<br/>").html_safe %>
 </p>
 
 <%= link_to 'Edit', edit_terms_and_condition_path(@terms_and_condition) %> |
