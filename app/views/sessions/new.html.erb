@@ -1,0 +1,27 @@
+<%= form_tag sessions_path do %>
+  <fieldset>
+    <h2>Login</h2>
+    <hr>
+    <% if flash.any? %>
+      <div id="login_alerts" class="alert alert-danger">
+        <ul>
+          <% flash.each do |name, msg| %>
+            <%= content_tag :li, msg, id: "flash_#{name}" %>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="form-group">
+      <%= text_field_tag :username, params[:username], class: "form-control  input-lg", placeholder: "Username" %>
+    </div>
+    <div class="form-group">
+      <%= password_field_tag :password, '', class: "form-control input-lg", placeholder: "Password" %>
+    </div>
+    <div class="form-group">
+      <%= submit_tag "Sign In", class: 'btn btn-primary' %>
+    </div> 
+  </fieldset>
+<% end %>
+
+Don't have an account yet? 
+<%= link_to "Register", new_user_path %>

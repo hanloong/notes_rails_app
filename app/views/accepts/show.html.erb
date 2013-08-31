@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @accept.user_id %>
+</p>
+
+<p>
+  <strong>Terms and condition:</strong>
+  <%= @accept.terms_and_condition_id %>
+</p>
+
+<%= link_to 'Edit', edit_accept_path(@accept) %> |
+<%= link_to 'Back', accepts_path %>

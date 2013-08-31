@@ -1,0 +1,32 @@
+<% unless notice.blank? %>
+  <div class="alert alert-info"><%= notice %></div>
+<% end %>
+<h1>Terms & Conditions</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @terms_and_conditions.each do |terms_and_condition| %>
+      <tr>
+        <td><%= terms_and_condition.title %></td>
+        <td><%= terms_and_condition.body %></td>
+        <td><%= link_to 'Show', terms_and_condition %></td>
+        <td><%= link_to 'Edit', edit_terms_and_condition_path(terms_and_condition) %></td>
+        <td><%= link_to 'Destroy', terms_and_condition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Terms and condition', new_terms_and_condition_path %>

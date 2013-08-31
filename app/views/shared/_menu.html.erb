@@ -1,0 +1,33 @@
+
+<nav class="navbar navbar-default" role="navigation">
+<div class="navbar-header">
+  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="navbar-brand" href="#">Notes App</a>
+</div>
+
+<!-- Collect the nav links, forms, and other content for toggling -->
+<div class="collapse navbar-collapse navbar-ex1-collapse">
+  <% if current_user %>
+    <ul class="nav navbar-nav">
+      <li><%= link_to "Notes", notes_path %></li>
+      <% if current_user.is_admin %>
+        <li><%= link_to "Terms & Conditions", terms_and_conditions_path %></li>
+        <li><%= link_to "User Manager", users_path %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <% if current_user %>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+      <%= link_to "Sign Out", logout_path %>
+      </li>
+    </ul>
+  <% end %>
+</div><!-- /.navbar-collapse -->
+</nav>

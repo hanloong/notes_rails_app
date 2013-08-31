@@ -1,0 +1,26 @@
+<%= form_for(@terms_and_condition) do |f| %>
+  <fieldset>
+    <hr>
+    <% if @terms_and_condition.errors.any? %>
+      <div id="error_explanation" class="alert alert-danger">
+        <h2><%= pluralize(@terms_and_condition.errors.count, "error") %> prohibited this terms_and_condition from being saved:</h2>
+
+        <ul>
+          <% @terms_and_condition.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.text_field :title, class: "form-control input-lg", placeholder: "Title" %>
+    </div>
+    <div class="form-group">
+      <%= f.text_area :body, rows: 10, class: "form-control input-lg", placeholder: "Body" %>
+    </div>
+    <div class="form-group pull-right">
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
+  </fieldset>
+<% end %>

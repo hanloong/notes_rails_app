@@ -1,0 +1,29 @@
+<h1>Listing accepts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Terms and condition</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @accepts.each do |accept| %>
+      <tr>
+        <td><%= accept.user_id %></td>
+        <td><%= accept.terms_and_condition_id %></td>
+        <td><%= link_to 'Show', accept %></td>
+        <td><%= link_to 'Edit', edit_accept_path(accept) %></td>
+        <td><%= link_to 'Destroy', accept, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Accept', new_accept_path %>
