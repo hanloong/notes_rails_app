@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Notes::Application.config.secret_key_base = '1e747aeda646732e9e4bc3ccd7e6c9ae6e0d4fe44ab6ed4c040fbbef94efd868a1e7efe73a066f0dae13f0800be2b7ac377328d76d56d9095fdb574364be2d13'
+Notes::Application.config.secret_key_base = ENV['SECRET_KEY_BASE']
