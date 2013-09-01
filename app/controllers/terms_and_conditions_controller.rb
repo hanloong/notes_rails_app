@@ -34,9 +34,6 @@ class TermsAndConditionsController < ApplicationController
   def update
     respond_to do |format|
       if @terms_and_condition.update(terms_and_condition_params)
-        @terms_and_condition.accepts.each do |accept|
-          accept.destroy
-        end
         format.html { redirect_to @terms_and_condition, notice: 'Terms and condition was successfully updated.' }
         format.json { head :no_content }
       else
