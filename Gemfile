@@ -46,3 +46,4 @@ gem "bcrypt-ruby", :require => "bcrypt"
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem "rails_12factor"
