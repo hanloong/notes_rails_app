@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
   validates_presence_of :username
   validates_uniqueness_of :username
+  validates_length_of :username, minimum: 6
+  validates_length_of :password, minimum: 6
 
   def self.authentication(username, password)
     user = find_by(username: username)
