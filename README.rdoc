@@ -1,28 +1,20 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a sample rails 4.0 app that allows
 
-Things you may want to cover:
+* Users and Admins to register (there is a admin toggle on the registration form for testing, obviously this would be removed for a production site)
 
-* Ruby version
+* Once users are login they can CRUD notes
 
-* System dependencies
+* Admins can CRUD Terms and Conditions
 
-* Configuration
+* When users login they must accept all terms and conditions before being able to creat notes
 
-* Database creation
+=== Improvements
 
-* Database initialization
+Currently a double select is used to determine what terms and conditions have not been accepted by a user. However postgres required a CAST to int on the inner select query before it could be sent to the outer query. I'm sure there is a more railsy way to do this.
 
-* How to run the test suite
+=== Access
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Hosted for a limited to at
+http://dry-crag-9245.herokuapp.com/terms_and_conditions
